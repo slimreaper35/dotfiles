@@ -1,0 +1,14 @@
+[user]
+    name = Michal Šoltis
+    email = ${git_user_email}
+[init]
+    defaultBranch = main
+[core]
+    editor = vim
+[commit]
+	gpgsign = true
+[alias]
+    rewrite = !sh -c 'git add . && git commit --amend --no-edit && git push --force'
+    update = !sh -c 'git switch main && git pull upstream main && git push && git switch - && git rebase main'
+    paste = !sh -c 'git stash pop && git add . && git commit --amend --no-edit && git rebase --continue'
+    compare = !sh -c 'git diff HEAD~1..HEAD'

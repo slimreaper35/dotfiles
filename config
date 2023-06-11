@@ -1,0 +1,3 @@
+Host aisa
+    HostName %h.fi.muni.cz
+    User xsoltis1
