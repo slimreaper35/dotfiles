@@ -1,11 +1,19 @@
+setopt no_beep
+
+export ZSH="$HOME/.oh-my-zsh"
+
+ZSH_THEME="xiong-chiamiov-plus"
+
 DISABLE_AUTO_TITLE="true"
 
-plugins=(git zsh-autosuggestions)
+plugins=(git zsh-autosuggestions python)
 
-alias py=python3.12
-alias ve='virtualenv --python=3.12 venv'
+alias ve='python3 -m venv venv'
 alias va='source venv/bin/activate'
 alias de=deactivate
-alias pycharm=./pycharm/bin/pycharm.sh
+
+alias vim=nvim
 
 export PIP_REQUIRE_VIRTUALENV=true
+
+source $ZSH/oh-my-zsh.sh

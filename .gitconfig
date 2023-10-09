@@ -1,0 +1,34 @@
+[user]
+    name = Michal Šoltis
+    email = msoltis@redhat.com 
+[init]
+    defaultBranch = main
+[remote "upstream"]
+    fetch = +refs/pull/*/head:refs/remotes/upstream/pr/*
+[remote "origin"]
+    fetch = +refs/pull/*/head:refs/remotes/origin/pr/*
+[core]
+    editor = nvim
+[commit]
+	gpgsign = true
+[alias]
+    co = checkout
+    br = branch
+    st = status
+    aa = add --all .
+    cm = commit --signoff --message
+    cp = cherry-pick
+    rb = rebase
+    rbi = rebase --interactive HEAD~5
+    rbc = rebase --continue
+    rba = rebase --abort
+    rl = reflog
+
+    compare = diff HEAD~1..HEAD
+    download = fetch --all --prune
+    unstage = restore --staged .
+
+    ; dangerous
+    rewrite = !git add . && git commit --amend --no-edit && git push --force
+    update = !git switch main && git pull upstream main && git push && git switch - && git rebase main
+    paste = !git stash pop && git add . && git commit --amend --no-edit && git rebase --continue
