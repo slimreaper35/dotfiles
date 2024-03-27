@@ -9,5 +9,6 @@ let g:python_highlight_all = 1
 set number
 set cc=100
 set noswapfile
+set cursorcolumn
 set tabstop=4
 set shiftwidth=4
