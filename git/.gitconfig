@@ -29,6 +29,7 @@
 	rbi = rebase --interactive HEAD~5
 	rbc = rebase --continue
 	rba = rebase --abort
+	pum = pull upstream main
 
 	compare = diff HEAD~1..HEAD
 	download = fetch --all --prune
