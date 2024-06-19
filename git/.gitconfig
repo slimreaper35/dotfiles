@@ -25,11 +25,14 @@
 	cm = commit --signoff --message
 	cp = cherry-pick
 	sw = switch
+	rh = reset --hard
 	rb = rebase
 	rbi = rebase --interactive HEAD~5
 	rbc = rebase --continue
 	rba = rebase --abort
 	pum = pull upstream main
+	cma = commit --amend
+	cman = commit --amend --no-edit
 
 	compare = diff HEAD~1..HEAD
 	download = fetch --all --prune
