@@ -18,3 +18,6 @@ alias clean='sudo dnf clean all'
 # Env
 export PIP_REQUIRE_VIRTUALENV=true
 export EDITOR=/usr/bin/nvim
+
+# Prompt
+PS1="[\u@\h \W]\\$ "
