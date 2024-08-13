@@ -1,0 +1,20 @@
+[legacy/profiles:]
+list=["5552A957-D588-4D0A-9DCD-735502C144E5", "3B334A84-2F7F-485A-8456-1DD35E3191CD", "32CF8900-5DAF-4B33-A747-127CA3EF6785"]
+default="3B334A84-2F7F-485A-8456-1DD35E3191CD"
+
+[legacy/profiles:/:5552A957-D588-4D0A-9DCD-735502C144E5]
+font='Monospace 12'
+visible-name='small'
+
+[legacy/profiles:/:3B334A84-2F7F-485A-8456-1DD35E3191CD]
+font='Monospace 16'
+visible-name='medium'
+
+[legacy/profiles:/:32CF8900-5DAF-4B33-A747-127CA3EF6785]
+font='Monospace 20'
+visible-name='large'
+
+[legacy/profiles:/*]
+audible-bell=false
+title-mode='ignore'
+use-system-font=false

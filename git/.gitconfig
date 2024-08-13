@@ -5,6 +5,7 @@
 	defaultBranch = main
 [core]
 	editor = nvim
+	excludesfile = ~/.gitignore
 [commit]
 	gpgsign = true
 [credential]
@@ -28,6 +29,7 @@
 	rbc = rebase --continue
 	rba = rebase --abort
 	pum = pull upstream main
+	cms = commit --signoff
 	cma = commit --amend
 	cman = commit --amend --no-edit
 
@@ -41,3 +43,5 @@
 	rewrite = !git add . && git commit --amend --no-edit && git push --force
 	update = !git switch main && git pull upstream main && git push && git switch - && git rebase main
 	paste = !git stash pop && git add . && git commit --amend --no-edit && git rebase --continue
+	incoming = !git checkout --ours . && git add .
+	current = !git checkout --theirs . && git add .
