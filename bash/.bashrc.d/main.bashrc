@@ -21,6 +21,7 @@ alias autoremove='sudo dnf autoremove -y'
 # Env
 export PIP_REQUIRE_VIRTUALENV=true
 export EDITOR=/usr/bin/nvim
+export HISTSIZE=10000
 
 # Prompt
 if ! [ -f ~/.git-prompt.sh ]; then
