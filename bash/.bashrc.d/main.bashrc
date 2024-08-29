@@ -4,6 +4,7 @@ alias ve='python3 -m venv venv'
 alias va='source venv/bin/activate'
 alias de=deactivate
 
+# Ansible
 alias ag='ansible-galaxy'
 alias al='ansible-lint'
 alias ap='ansible-playbook'
@@ -30,5 +31,6 @@ fi
 source ~/.git-prompt.sh
 
 GIT_PS1_SHOWDIRTYSTATE=true
+GIT_PS1_SHOWUNTRACKEDFILES=true
 
 PS1='[\u@\h \W$(__git_ps1)]\\$ '

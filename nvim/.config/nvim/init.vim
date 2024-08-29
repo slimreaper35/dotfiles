@@ -3,20 +3,19 @@ call plug#begin()
 Plug 'github/copilot.vim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-lua/plenary.nvim'
-Plug 'Mofiqul/dracula.nvim'
+Plug 'nvim-tree/nvim-web-devicons'
+Plug 'nvim-lualine/lualine.nvim'
 Plug 'catppuccin/nvim'
 Plug 'tpope/vim-commentary'
 Plug 'farmergreg/vim-lastplace'
 Plug 'Yggdroot/indentLine'
 Plug 'lewis6991/gitsigns.nvim'
-Plug 'nvim-lualine/lualine.nvim'
-Plug 'nvim-tree/nvim-web-devicons'
 
 call plug#end()
 
 filetype plugin indent on
 
-colorscheme dracula
+colorscheme catppuccin-frappe
 
 let g:python_highlight_all = 1
 
@@ -46,21 +45,18 @@ vmap <c-_> gc
 
 " Tab navigation
 nmap <c-n> :tabnew               <cr>
-nmap <c-w> :tabclose             <cr>
 nmap <Tab> :tabnext              <cr>
 
 " Duplicate line below
 nmap <c-d> :t.                   <cr>
 
+" Select all
+nmap <c-a> ggVG
 
 """""""""" lua
 """"""""""
 
 lua << EOF
 require('gitsigns').setup()
-require('lualine').setup {
-  options = {
-	theme = 'dracula'
-  }
-}
+require('lualine').setup()
 EOF

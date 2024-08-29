@@ -28,6 +28,7 @@
 	rbi = rebase --interactive HEAD~5
 	rbc = rebase --continue
 	rba = rebase --abort
+	lol = log --oneline
 	pum = pull upstream main
 	cms = commit --signoff
 	cma = commit --amend
