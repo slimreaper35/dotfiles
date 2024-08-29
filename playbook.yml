@@ -1,28 +1,33 @@
 - name: Setup local environment
-  hosts: localhost
+  hosts: "{{ my_host | default('localhost') }}"
   connection: local
+  gather_facts: true
 
   vars:
     packages:
-      - git
-      - gh
-      - neovim
-      - stow
-      - make
       - bat
       - dconf
+      - gh
+      - make
+      - neovim
+      - ripgrep
+      - stow
+      - tmux
 
   tasks:
     - name: Ensure packages are installed
       become: true
+      become_user: root
+      become_method: ansible.builtin.su
       ansible.builtin.dnf:
         name: "{{ packages }}"
         state: present
 
     - name: Ensure dotfiles are linked
       changed_when: false
-      community.general.make:
-        chdir: "{{ ansible_env.PWD }}"
+      ansible.builtin.command:
+        chdir: files
+        cmd: make
 
     - name: Ensure neovim plugin manager is installed
       ansible.builtin.get_url:
@@ -36,12 +41,3 @@
       changed_when: false
       ansible.builtin.command:
         cmd: "nvim +PlugInstall +qall"
-
-    - name: Ensure terminal profile is loaded
-      changed_when: false
-      ansible.builtin.shell: dconf load /org/gnome/terminal/ < terminal-profiles.dconf
-
-    - name: Ensure OpenSSH keypair is generated
-      community.crypto.openssh_keypair:
-        path: "{{ ansible_env.HOME }}/.ssh/id_rsa"
-        regenerate: "never"

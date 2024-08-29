@@ -5,6 +5,12 @@ I use [Ansible](https://www.ansible.com) and [GNU Stow](https://www.gnu.org/soft
 
 ## Installation
 
+Make sure `git` and `ansible-core` are installed.
+
+Run the following commands:
+
 ```bash
-ansible-playbook playbook.yml
+git clone https://github.com/slimreaper35/dotfiles.git
+cd dotfiles
+ansible-playbook playbook.yml --ask-become-pass
 ```
